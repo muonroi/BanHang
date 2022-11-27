@@ -35,6 +35,7 @@
                 }
             });
             alert("Thêm sản phẩm vào giỏ thành công");
+            window.location.reload();
         });
     }
 }

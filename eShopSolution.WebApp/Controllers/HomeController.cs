@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Http;
 using eShopSolution.ApiIntegration;
 using System.Globalization;
 using eShopSolution.Utilities.Constants;
+using eShopSolution.ViewModels.Sales;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace eShopSolution.WebApp.Controllers
 {
@@ -35,6 +38,7 @@ namespace eShopSolution.WebApp.Controllers
                 Slides = await _slideApiClient.GetAll(),
                 FeaturedProducts = await _productApiClient.GetFeaturedProducts(culture, SystemConstants.ProductSettings.NumberOfFeaturedProducts),
                 LatestProducts = await _productApiClient.GetLatestProducts(culture, SystemConstants.ProductSettings.NumberOfLatestProducts),
+                CheckoutViewModels = GetCheckoutViewModel()
             };
 
             return View(viewModel);
@@ -60,6 +64,19 @@ namespace eShopSolution.WebApp.Controllers
                 );
 
             return LocalRedirect(returnUrl);
+        }
+        private CheckoutViewModel GetCheckoutViewModel()
+        {
+            var session = HttpContext.Session.GetString(SystemConstants.CartSession);
+            List<CartItemViewModel> currentCart = new List<CartItemViewModel>();
+            if (session != null)
+                currentCart = JsonConvert.DeserializeObject<List<CartItemViewModel>>(session);
+            var checkoutVm = new CheckoutViewModel()
+            {
+                CartItems = currentCart,
+                CheckoutModel = new CheckoutRequest()
+            };
+            return checkoutVm;
         }
     }
 }

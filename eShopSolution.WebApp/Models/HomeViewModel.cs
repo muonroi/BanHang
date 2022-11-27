@@ -15,5 +15,6 @@ namespace eShopSolution.WebApp.Models
         public List<ProductVm> FeaturedProducts { get; set; }
 
         public List<ProductVm> LatestProducts { get; set; }
+        public CheckoutViewModel CheckoutViewModels { get; set; }
     }
 }

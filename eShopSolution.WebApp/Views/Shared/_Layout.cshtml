@@ -37,8 +37,8 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="header-login__list-items">Xin chào! Lê Uyên</li>
-                        <li style="cursor:pointer" class="header-login__list-items">
-                            <a style="cursor:pointer" id="mybtn" @*href="/@culture/Cart/Checkout"*@>
+                        <li onclick="relad()" style="cursor:pointer" class="header-login__list-items">
+                            <a style="cursor:pointer" id="mybtn">
                                 <i class="item fa-solid fa-cart-shopping"></i>
                                 <span class='badge badge-warning txt_quantity_' id='lblCartCount'>0</span>
                             </a>
@@ -212,117 +212,7 @@
                 </div>
             </div>
             </main>
-            <div id="myModal-cart" class="modal-cart modal">
-                <div class="modal-cart--content modal-content23">
-                    <div class="modal-header23">
-                        <span class="close">&times;</span>
-                    </div>
-                    <div class="modal-body23">
-                        <div class="sp-body23">
-                            <p class="csfsa">&times;</p>
-                            <div class="check0vsd">
-                                <input style="display:block" type="checkbox" class="imb-check">
-                                <img src="/img/a1.png" alt="" class="img-check">
-                                <div class="sp-add-bd">
-                                    <p class="p-check">Son Tint dạng lì siêu nhẹ môi innisfree Airy Matte Tint 3.8g</p>
-                                    <div class="baonhecaine">
-                                        <button style="display:inline" class="button">+</button>
-                                        <input style="width: 1em;text-align:center;border:none" type="text" class="input inputadssa" value="1" min="1" />
-                                        <button class="button">-</button>
-                                    </div>
 
-                                </div>
-                            </div>
-                            <p class="p-check-price">VND 306.000</p>
-                        </div>
-                        <div class="sp-body23">
-                            <p class="csfsa">&times;</p>
-                            <div class="check0vsd">
-                                <input style="display:block" type="checkbox" class="imb-check">
-                                <img src="/img/a2.png" alt="" class="img-check">
-                                <div class="sp-add-bd">
-                                    <p class="p-check">Dầu dưỡng tóc hoa trà innisfree Camellia Essential Hair Oil Serum 100ml...</p>
-                                    <div class="baonhecaine">
-                                        <button style="display:inline" class="button">+</button>
-                                        <input style="width: 1em;text-align:center;border:none" type="text" class="input inputadssa" value="1" min="1" />
-                                        <button class="button">-</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <p class="p-check-price">VND 234.000</p>
-                        </div>
-                        <div class="sp-body23">
-                            <p class="csfsa">&times;</p>
-                            <div class="check0vsd">
-                                <input style="display:block" type="checkbox" class="imb-check">
-                                <img src="/img/a3.png" alt="" class="img-check">
-                                <div class="sp-add-bd">
-                                    <p class="p-check">Kem dưỡng ẩm nâng tông làm sáng da và chống nắng innisfree Cherry Blossom Skin....</p>
-                                    <div class="baonhecaine">
-                                        <button style="display:inline" class="button">+</button>
-                                        <input style="width: 1em;text-align:center;border:none" type="text" class="input inputadssa" value="1" min="1" />
-                                        <button class="button">-</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <p class="p-check-price">VND 495.000</p>
-                        </div>
-                        <div class="sp-body23">
-                            <p class="csfsa">&times;</p>
-                            <div class="check0vsd">
-                                <input style="display:block" type="checkbox" class="imb-check">
-                                <img src="/img/a4.png" alt="" class="img-check">
-                                <div class="sp-add-bd">
-                                    <p class="p-check">Son Tint dạng lì siêu nhẹ môi innisfree Airy Matte Tint 3.8g</p>
-                                    <div class="baonhecaine">
-                                        <button style="display:inline" class="button">+</button>
-                                        <input style="width: 1em;text-align:center;border:none" type="text" class="input inputadssa" value="1" min="1" />
-                                        <button class="button">-</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <p class="p-check-price">VND 306.000</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer23">
-                        <div class="baocainhe">
-                            <img style="display:block" src="/img/trashpopop.png" alt="">
-                            <p style="margin-left:10px;color:#F07C50;cursor: pointer;">Xóa giỏ hàng</p>
-                        </div>
-                        <p class="giamgiachonhaudi">Mã giảm giá</p>
-                        <div class="formgiamgiado">
-                            <input class="dattengichongau" type="text" placeholder="Vui lòng nhập mã giảm giá">
-                            <input class="datdaidi" type="submit" value="Áp dụng">
-                        </div>
-                        <input style="margin-top: 20px;
-min-width:0;
-min-height: 0;
-background:none;
-border:none;
-display:inline;
-                max-width: 80.37px;
-                flex: 1;
-                transform: scale(2);
-                accent-color: #F07C50;
-                margin-right: 10px;" type="checkbox" class="imb-checks"> <span style="font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 24px;
-                line-height: 28px;
-
-                color: #000000;">Tất cả</span>
-                        <div class="tongtiendo">
-                            <p class="ptongtienprice">Tổng số tiền</p>
-                            <p class="ptongtienprice">VND 495.000</p>
-                        </div>
-                        <a href="/@culture/Cart/Checkout" class="text-center text-white d-block btsdsdadsa">Mua hàng</a>
-                        <a class="closes text-center d-block addasd btsdsdadsa">Xem thêm sản phẩm</a>
-                    </div>
-                </div>
-            </div>
             <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
             <script>
                 // Get the modal
@@ -456,8 +346,6 @@ display:inline;
 
         });
     </script>
-
-
     <script>
         $('#myModal').on('shown.bs.modal', function () {
             $('#myInput').trigger('focus')
@@ -469,6 +357,15 @@ display:inline;
         function pay() {
             $('#exampleModal').modal('show');
         }
+    </script>
+    <script>
+        let sum = 0;
+        var pri = $('.p-check-price');
+        pri.forEach(myFunctionMuon);
+        function myFunctionMuon(item) {
+            sum += item;
+        }
+        $(".ptongtienprice").text() = 'VND ' + sum;
     </script>
     @RenderSection("scripts", required: false)
 </body>
