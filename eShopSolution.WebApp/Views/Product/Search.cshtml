@@ -1,0 +1,71 @@
+﻿@model IEnumerable<eShopSolution.ViewModels.Catalog.Products.ProductVm>
+@{
+    ViewData["Title"] = "Tìm kiếm sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@if (Model.Count() == 0)
+{
+    <div class="main-search">
+        <div class="main-search-cat">
+            <p class="main-search-cat--title">Không tìm thấy sản phẩm phù hợp</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="main-search">
+        <div class="main-search-cat">
+            <p class="main-search-cat--title">RỬA MẶT & TẨY TRANG</p>
+        </div>
+        <div class="main-search-body">
+            <div class="div-menubar">
+                <ul class="menulist ">
+                    <li class="menulist-items">SẢN PHẨM BÁN CHẠY</li>
+                    <li style="color:
+                    #FF7880" class="menulist-items">SẢN PHẨM MỚI</li>
+                    <li style="color:#FC9C41;
+                    " class="menulist-items">SẢN PHẨM ƯU ĐÃI</li>
+                    <li class="menulist-items">DƯỠNG DA</li>
+                    <li class="menulist-items">MẶT NẠ</li>
+                    <li class="menulist-items">TRANG ĐIỂM</li>
+                    <li class="menulist-items">CHĂM SÓC TÓC & CƠ THỂ</li>
+                    <li class="menulist-items">CHỐNG NẮNG</li>
+                    <li class="menulist-items">DÀNH CHO NAM</li>
+                    <li class="menulist-items">KHÁC</li>
+                </ul>
+            </div>
+            <div class="main-search-body-details">
+                @foreach (var item in Model)
+                {
+                    var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+                    <div class="sanpham-detailss">
+                        <img class="sanpham-details-imgs" src="@item.ThumbnailImage">
+                        <a style="display:block" class="sanpham-details-texts" href="@url">@item.Name</a>
+                        <div class="pricess">
+                            <span style="display:inline-block" class="prices-pricess">
+                                @{
+                                    CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                                    string salePrices = item.Price.ToString("#,###", culs.NumberFormat);
+                                }
+                                @("VNĐ " + salePrices)
+                            </span>
+                            <span class="prices-sale">20%</span>
+                        </div>
+                        <div class="add-to-cart">
+                            <p class="total-prices">
+                                @{
+                                    string originPrices = item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                                }
+                                @("VNĐ " + originPrices)
+                            </p>
+                            <a class="add-card btn-add-cart" data-id="@item.Id" href="#" style="display:block"><localize><i class="fa-solid fa-cart-plus"></i></localize></a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

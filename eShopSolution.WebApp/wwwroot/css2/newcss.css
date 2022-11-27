@@ -1,0 +1,452 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content23 {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #F07C50;
+    float: right;
+    font-size: 61px;
+    border-radius: 100%;
+    background: #FFFFFF;
+    min-width: 60px;
+    min-height: 60px;
+    border: 1px solid #F07C50;
+    text-align: center;
+    margin-top: 1.2%;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-header23 {
+    padding: 2px 16px;
+    color: white;
+    min-height: 70px;
+}
+
+.modal-body23 {
+    padding: 2px 16px;
+}
+
+.modal-footer23 {
+    padding: 2px 16px;
+    color: white;
+}
+
+.modal-cart--content {
+    max-width: 900px;
+    min-height: 1600px;
+    margin-bottom: 150px;
+}
+
+.sp-body23::before {
+    content: "";
+    border-top: 1px solid #333;
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.p-check {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    padding-bottom: 10px;
+}
+
+.check0vsd {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.imb-check {
+    max-width: 80.37px;
+    flex: 1;
+    transform: scale(2);
+    accent-color: #F07C50;
+}
+
+.img-check {
+    max-width: 235.37px;
+    max-height: 235.37px;
+    flex: 2;
+}
+
+.baonhecaine {
+    padding: 2px;
+    max-width: 80.37px;
+    border: 1px solid #333;
+}
+
+.button {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    color: #000000;
+    border: none;
+    background-color: white;
+}
+
+.sp-add-bd {
+    margin-left: 13%;
+    max-width: 400.37px;
+    flex: 1;
+}
+
+.inputadssa {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 20px;
+    color: #000000;
+}
+
+.p-check-price {
+    text-align: right;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    /* identical to box height */
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.csfsa {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    color: #F07C50;
+    font-size: 30px;
+}
+
+.modal-footer23 {
+}
+
+.baocainhe {
+    display: flex;
+    align-items: center;
+}
+
+.modal-footer23::before {
+    content: "";
+    border-top: 1px solid #333;
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.giamgiachonhaudi {
+    padding: 10px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.dattengichongau {
+    min-width: 732.05px;
+    min-height: 50px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 0 10px;
+}
+
+.datdaidi {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #F07C50;
+    border: 1px solid #F07C50;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 2%;
+}
+
+.formgiamgiado {
+    display: flex;
+}
+
+.imb-checks {
+    margin-top: 20px;
+    max-width: 80.37px;
+    flex: 1;
+    transform: scale(2);
+    accent-color: #F07C50;
+    margin-right: 10px;
+}
+
+.tongtiendo {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ptongtienprice {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.btsdsdadsa {
+    display: block;
+    margin: 10px 0;
+    background: #F07C50;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    border: 1px solid #F07C50;
+    min-width: 100%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.addasd {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.85);
+    border: 1px solid #3333;
+    min-width: 100%;
+    padding: 5px;
+    cursor: pointer;
+}

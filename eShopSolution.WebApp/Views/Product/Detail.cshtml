@@ -1,0 +1,48 @@
+﻿@model ProductDetailViewModel
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture;
+}
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+
+<ul class="breadcrumb">
+    <li><a href="/"><localize>Home</localize></a> <span class="divider">/</span></li>
+    <li>@Model.Product.Name</li>
+</ul>
+<div class="app-detail">
+    <div class="app-detail__img-main">
+        <img src="@Model.Product.ThumbnailImage" alt="" class="app-detail__img-main--img">
+    </div>
+    <div class="app-detail__info">
+        <div class="app-detail__info--header">
+            <p class="app-detail__info--title">@Model.Product.Name</p>
+            <p class="app-detail__info--des">@Model.Product.Description</p>
+        </div>
+        <div class="app-detail__info--body">
+            <div class="app-detail__info--body--price">
+                <p class="app-detail__info--body--numtext">Giá gốc: </p>
+                <span class="app-detail__info--body--origin" style="text-decoration:line-through">VND @(Model.Product.Price)</span>
+            </div>
+            <div class="app-detail__info--body--price">
+                <p class="app-detail__info--body--numtext">Giá bán: </p>
+                <span class="app-detail__info--body--sale">VND @(Model.Product.OriginalPrice)</span>
+            </div>
+        </div>
+        <div class="app-detail__info--footer">
+            <div class="space">
+                <a class="add-card btn-add-cart add-to-cart-dt" data-id="@Model.Product.Id" href="#"><i class="fa-solid fa-cart-plus" style="font-size: 1.3rem;"></i> <localize>Thêm vào giỏ hàng</localize></a>
+                <a class="pay-to-card-dt" href="#">Mua hàng</a>
+            </div>
+        </div>
+        <div class="readme">
+            <p class="readme-title">Thông tin sản phẩm</p>
+            <br />
+            <br />
+            <p class="readme-text">
+                @Model.Product.Description
+            </p>
+        </div>
+    </div>
+</div>

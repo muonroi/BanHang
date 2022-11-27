@@ -1,0 +1,316 @@
+﻿@model eShopSolution.ViewModels.System.Users.RegisterRequest
+@{
+    ViewData["Title"] = "Đăng ký bổ sung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+<div class="main-registerdetail">
+    <div class="flow">
+        <div class="fow22">
+            <div class="flow-1 ">
+                <p class="p-fl1 active">1</p>
+                <p class="p-fl1-1">Nhập thông tin</p>
+            </div>
+            <div class="flow-2">
+                <p class="p-fl2">2</p>
+                <p class="p-fl1-2">Hoàn thành đăng ký</p>
+
+            </div>
+            <div asp-validation-summary="All" class="text-error text-danger">
+            </div>
+        </div>
+
+    </div>
+    <div class="main-1">
+        <div class="inputinfo">
+            <div class="info-1">Nhập thông tin thành viên</div>
+            <div class="info-2">Vui lòng nhập đầy đủ các hạng mục bắt buộc.</div>
+        </div>
+        <div class="inputinfologin">
+            <form asp-action="RegisterTwo" asp-controller="Account" method="post">
+                <label class="lanel" asp-for="Email">Địa chỉ email của bạn (ID)<sup class="text-warning">*</sup></label>
+                <input asp-for="Email" class="loai1" type="email" placeholder="Vui lòng nhập địa chỉ email của bạn.">
+                <a class="xn btn btn-primary" href="#">Xác nhận</a>
+                <div class="email-detail">Vui lòng nhập địa chỉ email (ID) và nhấn xác nhận. </div>
+                <span style="display:block;color:red;" asp-validation-for="Email" class="text-error"></span>
+
+                <label class="lanel" asp-for="FirstName">Họ và tên<sup class="text-warning">*</sup></label>
+                <input asp-for="FirstName" class="loai2" type="text" placeholder="Họ">
+                <input asp-for="LastName" class="loai2" type="text" placeholder="Tên">
+                <br />
+                <label class="lanel" asp-for="Password">Mật khẩu<sup class="text-warning">*</sup></label>
+                <input class="loai3" asp-for="Password" type="password" placeholder="Vui lòng nhập 6~12 ký tự gồm chữ cái/ chữ số.">
+                <span style="display:block;color:red;" asp-validation-for="Password" class="text-error"></span>
+                <div class="email-detail2">Vui lòng nhập mật khẩu tối thiểu 6~12 ký tự gồm chữ cái không viết hoa + chữ số.</div>
+                <label class="lanel" for="4">Xác nhận mật khẩu<sup class="text-warning">*</sup></label>
+                <input class="loai3" asp-for="ConfirmPassword" type="password" placeholder="Vui lòng nhập lại mật khẩu.">
+                <span style="display:block;color:red;" asp-validation-for="ConfirmPassword" class="text-error"></span>
+                <br />
+                <label class="lanel">Ngày sinh<sup class="text-warning">*</sup></label>
+                <input required class="loai4" type="text" placeholder="Ngày">
+                <input required class="loai4" type="text" placeholder="Tháng">
+                <input required class="loai4" type="text" placeholder="Năm">
+                <br />
+
+                <label class="lanel" asp-for="PhoneNumber">Số điện thoại<sup class="text-warning">*</sup></label>
+                <input class="loai1" asp-for="PhoneNumber" type="text" minlength="10" maxlength="10" placeholder="Vui lòng nhập số điện thoại">
+                <br />
+                <label class="lanel" asp-for="UserName">Nick name<sup class="text-warning">*</sup></label>
+                <input asp-for="UserName" type="text" class="loai1" placeholder="Vui lòng nhập nick name của bạn.">
+                <a class="xn btn btn-primary" href="#">Kiểm tra trùng lặp</a>
+                <div class="div-p1">
+                    <p class="p1">
+                        Vui lòng nhập bằng chữ cái và chữ số, trừ các ký tự đặc biệt.
+                        <br />
+                        <br /> Vui lòng nhấn vào nút Kiểm tra trùng lặp Nickname
+                        <br />
+                        <br /> Bạn không thể thay đổi Nickname đã đăng ký từ <br />trước.<br />
+                        <br /> Nickname được sử dụng trong cộng động trong <br /> chương trình giới thiệu bạn bè, bạn hãy sử dụng ID dễ nhận biết giữa các thành viên để không gây nhầm lẫn <br />nhé.
+                    </p>
+                </div>
+
+                <label class="lanel" for="8">Người giới thiệu</label>
+                <input class="loai1" name="8" type="text" placeholder="Vui lòng nhập communiti ID của người giới thiệu.">
+                <a class="xn btn btn-primary" href="#">Kiểm tra</a>
+                <div class="email-detail3">Hãy nhập nickname của người đã giới thiệu bạn về innisfree để cả hai cùng nhận ưu đãi! </div>
+                <label class="lanel" for="fav_language">Giới tính<sup class="text-warning">*</sup></label>
+
+                <input required style="display:inline-block" type="radio" id="html" name="fav_language" value="HTML"><label for="html" style="display:inline-block;    font-size: 1.5rem;">Nữ</label>
+                <input required style="display:inline-block" type="radio" id="css" name="fav_language" class="fav-languages" value="CSS"><label style="
+                           display:inline-block;    font-size: 1.5rem;" for="css">Nam</label><br>
+                <div class="inputinfo ss">
+                    <div class="info-1">Đăng ký thông tin bổ sung</div>
+                    <div class="info-2">Hãy cho innisfree biết thêm về bạn để tư vấn hiệu quả hơn nhé!</div>
+                </div>
+                <div class="div-ngang">
+                    <div class="div-title">
+                        <p class="p112">Loại da<sup class="text-warning">*</sup></p>
+                        <p style="visibility: hidden" class="p112">Loại da</p>
+                        <p class="p112">Nhu cầu chăm sóc da</p>
+                        <p style="visibility: hidden" class="p112">Loại da</p>
+                        <p style="visibility: hidden" class="p112">Loại da</p>
+                        <p class="p112">Phong cách trang điểm</p>
+                        <p style="visibility: hidden" class="p112">Loại da</p>
+                        <p style="visibility: hidden" class="p112">Loại da</p>
+                    </div>
+                    <div class="div-btn-cl-1">
+                        <div class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Mọi loại da</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da nhạy cảm</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Dưỡng ẩm</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Trị mụn</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Không sử dụng</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Che phủ tốt</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Tự nhiên</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Không sử dụng</label>
+
+                        </div>
+                    </div>
+                    <div class="div-btn-cl-1">
+                        <div class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da khô </label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da mụn </label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Chống lão hóa</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Lâu trôi</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Bóng</label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                    </div>
+                    <div class="div-btn-cl-1">
+                        <div class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da dầu </label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da mụn </label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Săn chắc</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Tẩy tế bào chết</label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Bóng khỏe</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Lấp lánh </label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                    </div>
+                    <div class="div-btn-cl-1">
+                        <div class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da hỗn hợp </label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="radio" name="1">
+                            <label class="lb-1">Da mụn </label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Dưỡng sáng</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Kiềm dầu</label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Lì mịn</label>
+
+                        </div>
+                        <div class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Ánh nhũ</label>
+
+                        </div>
+                        <div style="visibility: hidden" class="ip-cl-1">
+                            <input type="checkbox">
+                            <label class="lb-1">Làm sạch</label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="div-sms">
+                    <div class="div-sms1">
+                        <p class="p112">Đồng ý nhận tin nhắn định kỳ<sup class="text-warning">*</sup></p>
+                        <p class="p112">Chính sách giao hàng và thanh toán</p>
+
+                    </div>
+                    <div class="div-sms11">
+                        <p style=" padding-top: 15px;" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+                        <div class="div-i">
+                            <div class="div-i1">
+                                <input type="checkbox" name="1">
+                                <label class="lb-1">Tin nhắn SMS</label>
+                            </div>
+                            <div class="div-i1">
+                                <input type="checkbox" name="1">
+                                <label class="lb-1">Email</label>
+                            </div>
+                        </div>
+
+                        <p style="visibility: hidden" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+                        <div class="ik">
+                            <p style="visibility: hidden" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+                            <p style="visibility: hidden" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+                            <p style="visibility: hidden" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+                            <p style="visibility: hidden" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+                            <p style="visibility: hidden" class="p112">Bạn có muốn nhận tin tức mới nhất và các thông tin khuyến mại không? </p>
+
+                            <div class="ip-cl-1 ikk">
+                                <input required type="checkbox" name="1">
+                                <label class="lb-1">Tôi đã đọc Điều khoản sử dụng và đồng ý với nội dung này. </label>
+
+                            </div>
+                            <div class="ip-cl-1 ">
+                                <input required type="checkbox" name="1">
+                                <label class="lb-1">Tôi đã đọc và đồng ý với Chính sách quyền riêng tư của Pinky.</label>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="gachngang"></div>
+                <div class="pps">
+                    <input class="regbtn btn btn-primary" type="submit" value="Đăng ký">
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="main-2"></div>
+</div>

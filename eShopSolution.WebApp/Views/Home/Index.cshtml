@@ -1,0 +1,194 @@
+﻿@model HomeViewModel
+@using System.Globalization;
+@using eShopSolution.ViewModels.Catalog.Products;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@{
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .mySlides {
+        display: none;
+    }
+</style>
+@section slider{
+    @for (int index = 0; index < Model.Slides.Count; index++)
+    {
+        var slide = Model.Slides[index];
+        <img class="mySlides header-banner-img fade" src="@slide.Image" style="width:100%">
+    }
+    }
+    <div class="header-botom">
+        <div class="div div-1">
+            <img src="/img/Vector.png">
+            <div class="dau">
+                <span class="header-botom-title">TƯ VẤN & CHĂM SÓC TẬN TÌNH CHU ĐÁO</span>
+                <span class="header-botom-des">Trong suốt quá trình sử dụng</span>
+            </div>
+        </div>
+        <div class="div div-2">
+            <img src="/img/vec2.png">
+            <div class="dau">
+                <span class="header-botom-title">SẢN PHẨM 100% CHÍNH HÃNG</span>
+                <span class="header-botom-des">Cam kết đảm bảo về nguồn gốc</span>
+            </div>
+        </div>
+        <div class="div div-3">
+            <img src="/img/vec3.png">
+            <div class="dau">
+                <span class="header-botom-title">CHO PHÉP TRẢ HÀNG</span>
+                <span class="header-botom-des">Cho phép đổi trả trong vòng 15 ngày</span>
+            </div>
+        </div>
+    </div>
+                                                                                                                                </header>
+
+    <main>
+
+        <div class="div-spthinhhanh">
+            <span class="border-l"></span>
+            <span class="border-ct">SẢN PHẨM THỊNH HÀNH</span>
+            <span class="border-r"></span>
+        </div>
+
+        <div class="gai-xinh">
+            <img class="gai-xinh-img" src="/img/thinhhanh1.jpg" />
+            <img class="gai-xinh-img" src="/img/thinhhanh2.jpg" />
+        </div>
+        <div class="tinh-dau">
+            <div class="tinh-dau-1">
+                <img class="tinhdau-img" src="/img/thinhhanh4.jpg" />
+                <img class="tinhdau-img" src="/img/thinhhanh5.jpg" />
+            </div>
+            <div class="tinh-dau-1">
+                <img class="tinhdau-img" src="/img/thinhhanh6.jpg" />
+                <img class="tinhdau-img" src="/img/thinhhanh7.jpg" />
+            </div>
+        </div>
+
+        <div class="div-spthinhhanh">
+            <span class="border-l"></span>
+            <span class="border-ct">SẢN PHẨM GỢI Ý</span>
+            <span class="border-r"></span>
+        </div>
+
+        <div class="sanpham">
+            @{
+            var i = 0;
+        }
+        @foreach (var item in Model.LatestProducts)
+        {
+            var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+            if (i < 4)
+            {
+                <div class="sanpham-details">
+                    <img class="sanpham-details-img" src="@item.ThumbnailImage">
+                    <p class="sanpham-details-text"><a href="@url">@item.Name</a></p>
+                    <div class="prices">
+                        <span style="display:inline-block" class="prices-price">
+                            @{
+                                CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                                string salePrice = item.Price.ToString("#,###", culs.NumberFormat);
+                            }
+                            @("VNĐ " + salePrice)
+                        </span>
+                        <span class="prices-sale">20%</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <p class="total-price">
+                            @{
+                                string originPrice = item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                            }
+                            @("VNĐ " + originPrice)
+                        </p>
+                        <a class="add-card btn-add-cart" data-id="@item.Id" href="#" style="display:block"><localize><i class="fa-solid fa-cart-plus"></i></localize></a>
+                    </div>
+                    <a class="pay-to-card-dt hv" href="#" style="margin-top:10%; padding:2%">Mua hàng</a>
+
+                </div>
+                i++;
+            }
+        }
+    </div>
+
+    <div class="div-spthinhhanh">
+        <span class="border-l"></span>
+        <span class="border-ct">SẢN PHẨM NỔI BẬT CỦA HÃNG</span>
+        <span class="border-r"></span>
+    </div>
+    <div class="sanphams">
+        @{
+            var j = 0;
+        }
+        @foreach (var item in Model.FeaturedProducts)
+        {
+            var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+
+            if (j < 3)
+            {
+                <div class="sanpham-detailss">
+                    <img class="sanpham-details-imgs" src="@item.ThumbnailImage">
+                    <a style="display:block" class="sanpham-details-texts" href="@url">@item.Name</a>
+                    <div class="pricess">
+                        <span style="display:inline-block" class="prices-pricess">
+                            @{
+                                CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                                string salePrices = item.Price.ToString("#,###", culs.NumberFormat);
+                            }
+                            @("VNĐ " + salePrices)
+                        </span>
+                        <span class="prices-sale">20%</span>
+                    </div>
+                    <div class="add-to-cart">
+                        <p class="total-prices">
+                            @{
+                                string originPrices = item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                            }
+                            @("VNĐ " + originPrices)
+                        </p>
+                        <a class="add-card btn-add-cart" data-id="@item.Id" href="#" style="display:block"><localize><i class="fa-solid fa-cart-plus"></i></localize></a>
+                    </div>
+                    <a class="pay-to-card-dt hv" href="#" style="margin-top:10%; padding:2%">Mua hàng</a>
+                </div>
+                j++;
+            }
+        }
+    </div>
+    <div class="div-spthinhhanh">
+        <span class="border-l"></span>
+        <span class="border-ct">ƯU ĐÃI ĐẶC BIỆT CỦA THÁNG NÀY</span>
+        <span class="border-r"></span>
+    </div>
+    <div class="sanphams">
+        @foreach (var item in Model.LatestProducts)
+        {
+            var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+            <div class="sanpham-details">
+                <img class="sanpham-details-img" src="@item.ThumbnailImage">
+                <a style="display:block" class="sanpham-details-text" href="@url">@item.Name</a>
+                <div class="prices">
+                    <span style="display:inline-block" class="prices-price">
+                        @{
+                            CultureInfo culs = CultureInfo.GetCultureInfo("vi-VN");
+                            string salePrices = item.Price.ToString("#,###", culs.NumberFormat);
+                        }
+                        @("VNĐ " + salePrices)
+                    </span>
+                    <span class="prices-sale">20%</span>
+                </div>
+                <div class="add-to-cart">
+                    <p class="total-price">
+                        @{
+                            string originPrices = item.OriginalPrice.ToString("#,###", culs.NumberFormat);
+                        }
+                        @("VNĐ " + originPrices)
+                    </p>
+                    <a class="add-card btn-add-cart" data-id="@item.Id" href="#" style="display:block"><localize><i class="fa-solid fa-cart-plus"></i></localize></a>
+                </div>
+                <a class="pay-to-card-dt hv" href="#" style="margin-top:10%; padding:2%">Mua hàng</a>
+            </div>
+        }
+    </div>
