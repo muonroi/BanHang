@@ -303,6 +303,7 @@ input[type="number"] {
     line-height: 38px;
     /* identical to box height */
     color: #FFFFFF;
+    padding: 15px;
 }
 
 .freelacer {

@@ -34,7 +34,10 @@ namespace eShopSolution.WebApp.Controllers
         {
             return View(GetCheckoutViewModel());
         }
-
+        public IActionResult check2()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Checkout(CheckoutViewModel request)
         {
@@ -66,7 +69,7 @@ namespace eShopSolution.WebApp.Controllers
             HttpContext.Session.Remove(SystemConstants.CartSession);
             TempData["SuccessMsg"] = "Đặt hàng thành công!";
 
-            return View(model);
+            return RedirectToAction("check2", "Cart");
         }
 
         [HttpGet]

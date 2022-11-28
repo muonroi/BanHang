@@ -1,0 +1,404 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* The Modal (background) */
+
+.modal2 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+/* Modal Content */
+
+.modal-content2 {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+/* The Close Button */
+
+.close {
+    color: #F07C50;
+    float: right;
+    font-size: 61px;
+    border-radius: 100%;
+    background: #FFFFFF;
+    min-width: 60px;
+    min-height: 60px;
+    border: 1px solid #F07C50;
+    text-align: center;
+    margin-top: 1.2%;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-header2 {
+    padding: 2px 16px;
+    color: white;
+    min-height: 70px;
+}
+
+.modal-body2 {
+    padding: 2px 16px;
+}
+
+.modal-footer2 {
+    padding: 2px 16px;
+    color: white;
+}
+
+.modal-cart2--content {
+    max-width: 900px;
+    min-height: 1600px;
+    margin-bottom: 150px;
+}
+
+.sp-body2::before {
+    content: "";
+    border-top: 1px solid #333;
+    display: block;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.app-detail2 {
+    position: relative;
+    max-width: 1170px;
+    background: #FFFFFF;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-detail2__img-main {
+    text-align: center;
+    flex: 1;
+    max-width: 523.56px;
+    max-height: 580px;
+}
+
+.app-detail2__img-main--img {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.app-detail2__info {
+    flex: 1;
+}
+
+.app-detail2__info--header {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.app-detail2__info--title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.app-detail2__info--des {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.app-detail2__info--body {
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.app-detail2__info--body--price {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    align-items: center;
+}
+
+.app-detail2__info--body--numtext {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.breadcrumb {
+    display: flex;
+}
+
+.readme2::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    border-bottom: 1px solid #3333;
+    margin: 2% 0;
+}
+
+.active {
+    color: InactiveCaptionText;
+    cursor: pointer;
+}
+
+.app-detail2__info--body--origin {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.app-detail2__info--body--price:first-child:after {
+    content: "";
+    border: 1px solid #000000;
+    min-height: 20px;
+}
+
+.app-detail2__info--body--sale {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 35px;
+    color: rgba(201, 10, 10, 0.85);
+}
+
+.space2 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+}
+
+a {
+    color: #F07C50;
+    text-decoration: none;
+}
+
+.add-to-cart-dt2 {
+    min-width: 250px;
+    min-height: 55px;
+    background: #F07C50;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #FFFFFF;
+    line-height: 320%;
+    text-align: center;
+}
+
+.pay-to-card-dt2 {
+    min-width: 250px;
+    min-height: 55px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    color: #000000;
+    line-height: 320%;
+    text-align: center;
+}

@@ -32,6 +32,7 @@ namespace eShopSolution.WebApp.Controllers
         public async Task<IActionResult> Search(string name, string culture)
         {
             List<ProductVm> product = await _productApiClient.SearchProductsAsync(name, culture);
+            product = await _productApiClient.SearchProductsAsync("sản", culture);
             return View(product);
         }
         public async Task<IActionResult> Category(int id, string culture, int page = 1)

@@ -234,15 +234,15 @@
                         <p style="visibility:hidden" class="paskdgas">Số điện thoại</p>
                     </div>
                     <div class="adhladheqwedjsdnl">
-                        <input asp-for="CheckoutModel.Name" class="loai2" type="text" placeholder="Họ"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <input class="loai2" type="text" placeholder="Tên">
+                        <input required style="max-width: 290px;" asp-for="CheckoutModel.Name" class="loai2" type="text" placeholder="Họ"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <input style="max-width: 290px;" class="loai2" type="text" placeholder="Tên">
                         <br />
 
                         <br />
 
                         <select style="     background: #FFFFFF;
                         border: 1px solid rgba(0, 0, 0, 0.3);
-                        width: 390px;
+                        min-width: 627px;
                         height: 50px;
                         margin: 10px 0;
                         padding: 10px;
@@ -253,7 +253,7 @@
 
                         <select style="     background: #FFFFFF;
                         border: 1px solid rgba(0, 0, 0, 0.3);
-                        width: 390px;
+                        min-width: 627px;
                         height: 50px;
                         margin: 10px 0;
                         padding: 10px;
@@ -264,16 +264,16 @@
                         <input class="billing_address_2" name="" type="hidden" value="">
                         <br />
 
-                        <input style="     background: #FFFFFF;
+                        <input required asp-for="CheckoutModel.Address" style="     background: #FFFFFF;
                         border: 1px solid rgba(0, 0, 0, 0.3);
-                        width: 390px;
+                         min-width: 627px;
                         height: 50px;
                         margin: 10px 0;
                         padding: 10px;" type="text" placeholder="Phường / Xã">
                         <br />
 
 
-                        <input asp-for="CheckoutModel.PhoneNumber" class="loai2" type="text" placeholder="901919854">
+                        <input required style=" min-width: 627px;" asp-for="CheckoutModel.PhoneNumber" class="loai2" type="text" placeholder="901919854">
                         <br />
                         <div class="aldgkajsbd">
                             <input required style="accent-color: #F07C50;display:block;width: 35px;
@@ -454,14 +454,19 @@
 
         </div>
     </div>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js" crossorigin="anonymous"></script>
+    <script>
+        function msala() {
+            alert('Đặt hàng thành công!');
+        }
+    </script>
     <script>
         //<![CDATA[
 
         if (address_2 = localStorage.getItem('address_2_saved')) {
 
-            $('select[name="calc_shipping_district"] option').each(function() {
+            $('select[name="calc_shipping_district"] option').each(function () {
 
                 if ($(this).text() == address_2) {
 
@@ -479,7 +484,7 @@
 
             $('select[name="calc_shipping_district"]').html(district)
 
-            $('select[name="calc_shipping_district"]').on('change', function() {
+            $('select[name="calc_shipping_district"]').on('change', function () {
 
                 var target = $(this).children('option:selected')
 
@@ -501,13 +506,13 @@
 
         }
 
-        $('select[name="calc_shipping_provinces"]').each(function() {
+        $('select[name="calc_shipping_provinces"]').each(function () {
 
             var $this = $(this),
 
                 stc = ''
 
-            c.forEach(function(i, e) {
+            c.forEach(function (i, e) {
 
                 e += +1
 
@@ -517,7 +522,7 @@
 
                 if (address_1 = localStorage.getItem('address_1_saved')) {
 
-                    $('select[name="calc_shipping_provinces"] option').each(function() {
+                    $('select[name="calc_shipping_provinces"] option').each(function () {
 
                         if ($(this).text() == address_1) {
 
@@ -531,7 +536,7 @@
 
                 }
 
-                $this.on('change', function(i) {
+                $this.on('change', function (i) {
 
                     i = $this.children('option:selected').index() - 1
 
@@ -541,7 +546,7 @@
 
                     if (r != '') {
 
-                        arr[i].forEach(function(el) {
+                        arr[i].forEach(function (el) {
 
                             str += '<option value="' + el + '">' + el + '</option>'
 
@@ -557,7 +562,7 @@
 
                         localStorage.setItem('district', district)
 
-                        $('select[name="calc_shipping_district"]').on('change', function() {
+                        $('select[name="calc_shipping_district"]').on('change', function () {
 
                             var target = $(this).children('option:selected')
 
@@ -595,7 +600,6 @@
 
         })
 
-        //]]>
     </script>
 </body>
 

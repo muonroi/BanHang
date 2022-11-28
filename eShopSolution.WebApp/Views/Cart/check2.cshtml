@@ -1,1 +1,170 @@
-﻿
+﻿@model CheckoutViewModel
+@using Microsoft.AspNetCore.Identity
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@{
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css2/new2.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        .p-fl1 {
+            border: 1px solid #ccc;
+            border-radius: 100%;
+            min-width: 65px;
+            min-height: 65px;
+            text-align: center;
+            float: right;
+            padding: 10px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 60px;
+            color: rgba(80, 78, 78, 0.9);
+        }
+
+        .active {
+            background-color: rgb(240, 127, 83);
+        }
+
+        .p-fl2 {
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 100%;
+            min-width: 65px;
+            min-height: 65px;
+            text-align: center;
+            float: left;
+            padding: 10px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 60px;
+            color: rgba(80, 78, 78, 0.9);
+            margin-left: 3%;
+        }
+
+        .p-fl1-1 {
+            clear: right;
+            padding-top: 10px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            /* identical to box height */
+            color: #000000;
+        }
+
+        .p-fl1-2 {
+            clear: left;
+            padding-top: 10px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            /* identical to box height */
+            color: #000000;
+        }
+
+        .fow22 {
+            max-width: 100%;
+            display: flex;
+            padding: 30px;
+        }
+
+        .flow {
+            max-width: 100%;
+            padding: 50px 0;
+        }
+
+            .flow::before {
+                content: "";
+                display: block;
+                max-width: 100%;
+                border: 1px solid #3333;
+            }
+
+            .flow::after {
+                content: "";
+                display: block;
+                max-width: 100%;
+                border: 1px solid #3333;
+            }
+
+        .flow-1 {
+            width: 10px;
+            flex: 1;
+            text-align: right;
+            padding-right: 50px;
+        }
+
+        .flow-2 {
+            flex: 1;
+            text-align: left;
+            padding-left: 50px;
+        }
+    </style>
+    <div class="main--regsaq">
+        <div class="flow">
+            <div class="fow22">
+                <div class="flow-1 ">
+                    <p style="margin-right:4%;" class="p-fl1 ">1</p>
+                    <p class="p-fl1-1">Thông tin giao hàng</p>
+                </div>
+                <div class="flow-2">
+                    <p class="p-fl2 active">2</p>
+                    <p class="p-fl1-2 ">Hoàn thành đặt hàng</p>
+                </div>
+            </div>
+        </div>
+        <div class="baoboclaicaithui">
+            <p style="text-align:center;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+
+            color: rgb(0, 255, 0);
+            ">Đặt hàng thành công! Trang sẽ tự động chuyển hướng về trang chủ sau 5s</p>
+            <p id="demo" style="text-align:center;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 23px;
+
+            color: rgb(255, 0, 0);
+            "></p>
+        </div>
+    </div>
+    <script>
+        setTimeout(alertFunc, 5000);
+        let i = 5;
+
+        function alertFunc() {
+            window.location.href = "/";
+        }
+        const element = document.getElementById("demo");
+        setInterval(function () {
+            element.innerHTML = i--;
+        }, 1000);
+    </script>
+</body>
+
+</html>
