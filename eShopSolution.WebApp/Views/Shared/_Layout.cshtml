@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css2/style4.css">
     <link rel="stylesheet" href="/css2/newcss.css">
     <link rel="stylesheet" href="/css2/dsdsds.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <title>@ViewData["Title"]</title>
@@ -39,7 +40,7 @@
                     {
                         <li class="header-login__list-items">Xin chào! Lê Uyên</li>
                         <li onclick="relad()" style="cursor:pointer" class="header-login__list-items">
-                            <a style="cursor:pointer" id="mybtn">
+                            <a style="cursor:pointer" onclick="asda1231233()">
                                 <i class="item fa-solid fa-cart-shopping"></i>
                                 <span class='badge badge-warning txt_quantity_' id='lblCartCount'>0</span>
                             </a>
@@ -272,7 +273,7 @@
                 <div style="max-width: 900px;
         max-height: 983px;" class="modal-cart2--conten modal-content2">
                     <div class="modal-header2">
-                        <span onclick="cslsa()" class="close2">&times;</span>
+                        <span onclick="cslsa()" class="close">&times;</span>
                     </div>
                     <div class="modal-body2">
                         <div class="sp-body2">
@@ -351,7 +352,7 @@
                     font-size: 24px;
                     line-height: 28px;
                     text-align: right;
-
+                    text-decoration:line-through;
                     color: rgba(0, 0, 0, 0.6);">VND 340.000</del>
                             </p>
                             <p style="font-family: 'Roboto';
@@ -365,7 +366,7 @@
                         </div>
                         <div class="app-detail2__info2--footer">
                             <div class="space2">
-                                <a style="color: #FFFFFF !important;display:block" class="add-card add-to-cart-dt2" data-id="#" href="#"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</a>
+                                <a style="color: #FFFFFF !important;display:block" class="add-card add-to-cart-dt2" data-id="1" href="#"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng</a>
                                 <a style="margin-left:10px;display:block" class="pay-to-card-dt2" href="#">Mua hàng</a>
                             </div>
                         </div>
@@ -375,53 +376,48 @@
 
             <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
             <script>
-                // Get the modal
-                var modal = document.getElementById("myModal-cart");
+                function asda1231233() {
+                    var modal = document.getElementById("myModal-cart");
 
-                // Get the button that opens the modal
-                var btn = document.getElementById("mybtn");
-
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
-                var spans = document.getElementsByClassName("closes")[0];
-                // When the user clicks the button, open the modal
-                btn.onclick = function () {
                     modal.style.display = "block";
-                }
-
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-                spans.onclick = function () {
-                    modal.style.display = "none";
-                }
-                // When the user clicks anywhere outside of the modal, close it
-                window.onclick = function (event) {
-                    if (event.target == modal) {
+                    var span = document.getElementsByClassName("close")[0];
+                    var spans = document.getElementsByClassName("closes")[0];
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function () {
                         modal.style.display = "none";
                     }
-                }
-                $(function () {
-                    $(".button").on("click", function () {
-                        var $button = $(this);
-                        var $parent = $button.parent();
-                        var oldValue = $parent.find('.input').val();
-
-                        if ($button.text() == "+") {
-                            var newVal = parseFloat(oldValue) + 1;
-                        } else {
-                            // Don't allow decrementing below zero
-                            if (oldValue > 1) {
-                                var newVal = parseFloat(oldValue) - 1;
-                            } else {
-                                newVal = 1;
-                            }
+                    spans.onclick = function () {
+                        modal.style.display = "none";
+                    }
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
                         }
-                        $parent.find('a.add-to-cart').attr('data-quantity', newVal);
-                        $parent.find('.input').val(newVal);
+                    }
+                    $(function () {
+                        $(".button").on("click", function () {
+                            var $button = $(this);
+                            var $parent = $button.parent();
+                            var oldValue = $parent.find('.input').val();
+
+                            if ($button.text() == "+") {
+                                var newVal = parseFloat(oldValue) + 1;
+                            } else {
+                                // Don't allow decrementing below zero
+                                if (oldValue > 1) {
+                                    var newVal = parseFloat(oldValue) - 1;
+                                } else {
+                                    newVal = 1;
+                                }
+                            }
+                            $parent.find('a.add-to-cart').attr('data-quantity', newVal);
+                            $parent.find('.input').val(newVal);
+                        });
                     });
-                });
+                }
+
+
             </script>
             <footer>
                 <p class="footer-copyright">Pinky Cosmetic</p>
@@ -552,7 +548,7 @@
                 url: '@culture/Product/Search',
                 data: { "name": searchstr },
                 success: function (data) {
-                    window.location.href = "/@culture/Product/Search?name=" + "da";
+                    window.location.href = "/@culture/Product/Search?name=" + "kem";
                 },
                 error: function (data) {
                     window.location.href = "/@culture/Product/Search?name=" + "dưỡng";
