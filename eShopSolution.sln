@@ -30,8 +30,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.AdminApp", "e
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.ApiIntegration", "eShopSolution.ApiIntegration\eShopSolution.ApiIntegration.csproj", "{BBF7A2DD-57F2-4F44-BD7E-AA576B7123F6}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "Database1\Database1.sqlproj", "{55A1760D-9922-4864-9B07-5AA8D564A6A2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,12 +68,6 @@ Global
 		{BBF7A2DD-57F2-4F44-BD7E-AA576B7123F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBF7A2DD-57F2-4F44-BD7E-AA576B7123F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBF7A2DD-57F2-4F44-BD7E-AA576B7123F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55A1760D-9922-4864-9B07-5AA8D564A6A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55A1760D-9922-4864-9B07-5AA8D564A6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55A1760D-9922-4864-9B07-5AA8D564A6A2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{55A1760D-9922-4864-9B07-5AA8D564A6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55A1760D-9922-4864-9B07-5AA8D564A6A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55A1760D-9922-4864-9B07-5AA8D564A6A2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
