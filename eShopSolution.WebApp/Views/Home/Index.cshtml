@@ -168,7 +168,7 @@
         @foreach (var item in Model.LatestProducts)
         {
             var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
-            <div class="sanpham-details">
+            <div style="width:300px; max-height:500px;margin-top:25px" class="sanpham-details">
                 <img class="sanpham-details-img" src="@item.ThumbnailImage">
                 <a style="display:block" class="sanpham-details-text" href="@url">@item.Name</a>
                 <div class="prices">
