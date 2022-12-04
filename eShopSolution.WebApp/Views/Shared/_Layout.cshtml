@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css2/style4.css">
     <link rel="stylesheet" href="/css2/newcss.css">
     <link rel="stylesheet" href="/css2/dsdsds.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <title>@ViewData["Title"]</title>
@@ -351,7 +352,7 @@
                     font-size: 24px;
                     line-height: 28px;
                     text-align: right;
-
+                    text-decoration:line-through;
                     color: rgba(0, 0, 0, 0.6);">VND 340.000</del>
                             </p>
                             <p style="font-family: 'Roboto';
@@ -547,7 +548,7 @@
                 url: '@culture/Product/Search',
                 data: { "name": searchstr },
                 success: function (data) {
-                    window.location.href = "/@culture/Product/Search?name=" + "da";
+                    window.location.href = "/@culture/Product/Search?name=" + "kem";
                 },
                 error: function (data) {
                     window.location.href = "/@culture/Product/Search?name=" + "dưỡng";
