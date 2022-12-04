@@ -125,11 +125,11 @@
         @{
             var j = 0;
         }
-        @foreach (var item in Model.FeaturedProducts)
+        @foreach (var item in Model.LatestProducts)
         {
             var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
 
-            if (j >= 4 && j <= 6)
+            if (j < 3)
             {
                 <div class="sanpham-detailss">
                     <img class="sanpham-details-imgs" src="@item.ThumbnailImage">
