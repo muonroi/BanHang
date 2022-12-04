@@ -129,7 +129,7 @@
         {
             var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
 
-            if (j < 3)
+            if (j < 3 && item.Id % 3 == 0)
             {
                 <div class="sanpham-detailss">
                     <img class="sanpham-details-imgs" src="@item.ThumbnailImage">
